@@ -1,0 +1,14 @@
+---
+version: "3"
+services:
+ devopsdb:
+   image: sravandevops0067/newapp:dbimage
+   ports:
+     - "3306:3306"
+
+ dockerapp:
+   image: sravandevops0067/newapp:appimage
+   ports:
+     - "2233:8080"
+   depends_on:
+     - "devopsdb"
